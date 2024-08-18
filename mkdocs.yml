@@ -1,5 +1,5 @@
 site_name: GameDevCodex
-site_url: https://mydomain.org/GameDevCodex
+site_url: GameDevCodex
 
 theme:
   name: material

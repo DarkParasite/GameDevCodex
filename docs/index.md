@@ -2,6 +2,9 @@
 
 # ***The Game Dev Codex***
 
+**Live** :
+**Repo** : 
+
 ## CODEX :blue_book: 
 This site consists of notes and tips related to Game Development and mainly 
 about Unreal Engine. Since Unreal Engine's documentation is missing a lot of 
