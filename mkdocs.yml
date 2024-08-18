@@ -1,0 +1,80 @@
+site_name: GameDevCodex
+site_url: https://mydomain.org/GameDevCodex
+
+theme:
+  name: material
+  icon:
+    logo: fontawesome/solid/dice-d20
+  features:
+    # Navigation
+    - navigation.tabs
+    - navigation.sections
+    - navigation.path
+    - navigation.top
+    - navigation.expand
+    # Search
+    - search.suggest
+    - search.highlight
+    # Code
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
+
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      toggle:
+        icon: material/weather-night
+        name: Light Mode
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      toggle:
+        icon: material/weather-sunny
+        name: Dark Mode
+
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+plugins:
+  - search
+
+# Markdown Extension
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+# Additional CSS
+extra_css:
+  - stylesheets/additional.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/DarkParasite
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/rishikhanna47/
+
+copyright: Copyright &copy; 2024 Rishi Khanna
+
+
