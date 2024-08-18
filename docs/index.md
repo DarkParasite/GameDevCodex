@@ -1,9 +1,9 @@
 ###### HOME
 
-# ***The Game Dev Codex***
+# ***Game Dev Codex***
 
-**Live** :
-**Repo** : 
+**Live site :green_circle:** : [GameDevCodex](https://darkparasite.github.io/GameDevCodex/)  
+**Repo :simple-git:** : [DarkParasite/GameDevCodex](https://github.com/DarkParasite/GameDevCodex)
 
 ## CODEX :blue_book: 
 This site consists of notes and tips related to Game Development and mainly 
@@ -36,8 +36,9 @@ You are welcome to contribute to this `Codex`, just contact me!
 
 ## Have any feedback? 
 
-Open an issue in the Github repository. Help me improve this `Codex`, you are welcome!
-[]()
+Provide your feedback by opening an issue in the Github repository. Any feedback is appreciated, help me improve this `Codex`, you are welcome!  
+
+[Issues :material-git:](https://github.com/DarkParasite/GameDevCodex/issues)
 
 <br>
 <br>

@@ -7,8 +7,9 @@ theme:
     logo: fontawesome/solid/dice-d20
   features:
     # Navigation
+    - navigation.instant
+    - navigation.instant.progress
     - navigation.tabs
-    - navigation.sections
     - navigation.path
     - navigation.top
     - navigation.expand

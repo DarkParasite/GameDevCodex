@@ -49,6 +49,6 @@ OutActors.Shrink(); // Finally shrink the array
 
 ####References
 
-- [Optimizing-tarray-usage-for-performance](https://www.unrealengine.com/en-US/blog/optimizing-tarray-usage-for-performance)  
-- [Array-containers-in-unreal-engine](https://dev.epicgames.com/documentation/en-us/unreal-engine/array-containers-in-unreal-engine)
+- <https://www.unrealengine.com/en-US/blog/optimizing-tarray-usage-for-performance>
+- <https://dev.epicgames.com/documentation/en-us/unreal-engine/array-containers-in-unreal-engine>
 
