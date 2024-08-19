@@ -5,7 +5,7 @@
 **Live site :green_circle:** : [GameDevCodex](https://darkparasite.github.io/GameDevCodex/)  
 **Repo :simple-git:** : [DarkParasite/GameDevCodex](https://github.com/DarkParasite/GameDevCodex)
 
-## CODEX :blue_book: 
+## CODEX :material-script-text:
 This site consists of notes and tips related to Game Development and mainly 
 about Unreal Engine. Since Unreal Engine's documentation is missing a lot of 
 important documentation, I have compiled various `code`, `implementation logic`, `integration
@@ -34,7 +34,7 @@ You are welcome to contribute to this `Codex`, just contact me!
 [Email :material-email:](mailto:rishikhannalive@gmail.com)  
 [LinkedIn :simple-linkedin:](https://www.linkedin.com/in/rishikhanna47)
 
-## Have any feedback? 
+## Have any feedback? :material-message-text:
 
 Provide your feedback by opening an issue in the Github repository. Any feedback is appreciated, help me improve this `Codex`, you are welcome!  
 

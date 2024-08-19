@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://mydomain.org/GameDevCodex/</loc>
-         <lastmod>2024-08-18</lastmod>
+         <loc>https://darkparasite.github.io/GameDevCodex/</loc>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mydomain.org/GameDevCodex/Unreal%20Engine/Data%20Structures/TArray%20Tips/</loc>
-         <lastmod>2024-08-18</lastmod>
+         <loc>https://darkparasite.github.io/GameDevCodex/Unreal%20Engine/Config%20and%20Settings/Developer%20Settings/</loc>
+         <lastmod>2024-08-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://darkparasite.github.io/GameDevCodex/Unreal%20Engine/Data%20Structures/TArray%20Tips/</loc>
+         <lastmod>2024-08-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://darkparasite.github.io/GameDevCodex/Unreal%20Engine/General%20Programming/Delegates/</loc>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
