@@ -27,5 +27,5 @@ jobs:
             mkdocs-material-
       - run: pip install mkdocs-material
       - name: Copy and rename docs/index.md to README.md in root
-        run: cp doc/index.md ./README.md
+        run: cp docs/index.md ./README.md
       - run: mkdocs gh-deploy --force
