@@ -689,6 +689,117 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Steam SDK
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Steam SDK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Steam%20SDK/Intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Steam%20SDK/Setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Steam%20SDK/Player%20Avatar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Steam Player Avatar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -833,15 +944,15 @@
                   
 
 
-<h1 id="developer-settings">Developer Settings</h1>
-<h2 id="storing-developer-settings-in-config-file">Storing Developer Settings in Config File</h2>
+<h1 id="developer-settings">Developer Settings<a class="headerlink" href="#developer-settings" title="Permanent link">#</a></h1>
+<h2 id="storing-developer-settings-in-config-file">Storing Developer Settings in Config File<a class="headerlink" href="#storing-developer-settings-in-config-file" title="Permanent link">#</a></h2>
 <p>This section is about how to have custom developer settings that can be set in Config/DefaultGame.ini file.
 Helpful in scenario where you need to be able to modify certain settings via the <strong>config file</strong> instead of going through 
 blueprints or C++ to change variables.</p>
 <p>Let's see an example where I need to have variables like <code>MaxPlayersInSession</code> and
 <code>MaxNumOfTeams</code> in a config file, so I can modify them easily instead of going through
 the complex project</p>
-<h3 id="step-1">Step 1 :</h3>
+<h3 id="step-1">Step 1 :<a class="headerlink" href="#step-1" title="Permanent link">#</a></h3>
 <ul>
 <li>First Step is to create a class derived from <code>UDeveloperSettings</code></li>
 <li>Make sure to add the Config keyword in the <code>UPROPERTY</code> of the variable you wish to
@@ -853,7 +964,7 @@ get values from config file</li>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>* DefaultConfig - Add this if use Config=Game
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>* Blueprintable, BlueprintType - Add this if you want the settings to be exposed to blueprint
 </span></code></pre></div>
-<h4 id="example-code">Example Code :</h4>
+<h4 id="example-code">Example Code :<a class="headerlink" href="#example-code" title="Permanent link">#</a></h4>
 <p><div class="language-C++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">UCLASS</span><span class="p">(</span><span class="n">Config</span><span class="o">=</span><span class="n">Game</span><span class="p">,</span><span class="w"> </span><span class="n">DefaultConfig</span><span class="p">,</span><span class="w">  </span><span class="n">Blueprintable</span><span class="p">,</span><span class="w"> </span><span class="n">BlueprintType</span><span class="p">)</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">MULTIPLAYERSHOOTER_API</span><span class="w"> </span><span class="n">UMultiplayerSessionsDevSettings</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">UDeveloperSettings</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">{</span>
@@ -871,7 +982,7 @@ get values from config file</li>
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">};</span>
 </span></code></pre></div>
 <br></p>
-<h3 id="step-2">Step 2 :</h3>
+<h3 id="step-2">Step 2 :<a class="headerlink" href="#step-2" title="Permanent link">#</a></h3>
 <ul>
 <li>Add the required values to the config files</li>
 <li>When adding the class name make sure to not add the typical <code>U</code> or <code>A</code> prefix
@@ -881,20 +992,20 @@ of the class names</li>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Var1 = 100
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Var2 = 10
 </span></code></pre></div>
-<h4 id="example">Example</h4>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h4>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>[/Script/MultiplayerShooter.MultiplayerSessionsDevSettings]
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>MaxPlayerInSession = 100 
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>MaxTeamCount = 35
 </span></code></pre></div>
 <p><br></p>
-<h3 id="step-3">Step 3 :</h3>
+<h3 id="step-3">Step 3 :<a class="headerlink" href="#step-3" title="Permanent link">#</a></h3>
 <ul>
 <li>It's <code>MORBIN TIME</code>, wait no, I mean it's loading time.</li>
 <li>Load the variables in BeginPlay or Init</li>
 <li><code>Class Default Object</code> is already automatically instanced for us and can be 
 accessed using <code>GetDefault&lt;T&gt;()</code>;</li>
 </ul>
-<h4 id="example-code_1">Example Code :</h4>
+<h4 id="example-code_1">Example Code :<a class="headerlink" href="#example-code_1" title="Permanent link">#</a></h4>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>if (const UMultiplayerSessionsDevSettings* MultiplayerSessionsDevSettings = GetDefault&lt;UMultiplayerSessionsDevSettings&gt;())
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>{
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    MaxPlayersInSession = MultiplayerSessionsDevSettings-&gt;MaxPlayers;
@@ -902,7 +1013,7 @@ accessed using <code>GetDefault&lt;T&gt;()</code>;</li>
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>} 
 </span></code></pre></div>
 <p>There you go, now you have developer settings set in config file loaded into your game</p>
-<h3 id="references">References</h3>
+<h3 id="references">References<a class="headerlink" href="#references" title="Permanent link">#</a></h3>
 <ul>
 <li><a href="https://forums.unrealengine.com/t/how-to-store-variables-to-a-custom-ini-file/330274/6">https://forums.unrealengine.com/t/how-to-store-variables-to-a-custom-ini-file/330274/6</a></li>
 <li><a href="https://www.tomlooman.com/unreal-engine-developer-settings/">https://www.tomlooman.com/unreal-engine-developer-settings/</a></li>

@@ -42,9 +42,14 @@ theme:
 
 plugins:
   - search
+  - awesome-pages # Plugin Repo : https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
 
 # Markdown Extension
 markdown_extensions:
+  - toc:
+      permalink: "#"
+      separator: "-"
+
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
