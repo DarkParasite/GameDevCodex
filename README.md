@@ -13,7 +13,7 @@ procedures` and other `tips` which I found across different **forums**, **books*
 and **blogs**.  
 
 
-Why? : I spend hours searching and reading through stuff, so you don't have to, Cheers!
+Why? I spend hours searching and reading through stuff, so you don't have to, Cheers!
 
 ## Who Am I?
 
