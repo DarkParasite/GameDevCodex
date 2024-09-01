@@ -175,7 +175,7 @@ int main()
 
 - Static members of a class has a scope of the program, so it is valid throughout the lifetime
 of the program.
-- Static members must only be defined once, other it results in ambiguity error, since they
+- Static members must only be defined once, otherwise it results in ambiguity error, since they
 are treated like global variables, linker does not like this at all.
 - Static members only have one instance in the memory, unlike class members which are created
 for each instance of the class created. This is a fundamental characteristic of static. 
