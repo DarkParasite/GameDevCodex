@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://darkparasite.github.io/GameDevCodex/Unreal%20Engine/Steam%20SDK/Player%20Avatar/">
+        <link rel="canonical" href="https://darkparasite.github.io/GameDevCodex/C%2B%2B/ObjectLayoutInMemory/">
       
       
-        <link rel="prev" href="../Setup/">
+        <link rel="prev" href="../../Unreal%20Engine/Steam%20SDK/Player%20Avatar/">
       
       
-        <link rel="next" href="../../../C%2B%2B/ObjectLayoutInMemory/">
+        <link rel="next" href="../StaticKeyword/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
     
     
       
-        <title>Steam Player Avatar - GameDevCodex</title>
+        <title>Object Layout In Memory - GameDevCodex</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/additional.css">
+      <link rel="stylesheet" href="../../stylesheets/additional.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#steam-player-avatar" class="md-skip">
+        <a href="#object-layout-in-memory" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="GameDevCodex" class="md-header__button md-logo" aria-label="GameDevCodex" data-md-component="logo">
+    <a href="../.." title="GameDevCodex" class="md-header__button md-logo" aria-label="GameDevCodex" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m48.7 125.8 53.2 31.9c7.8 4.7 17.8 2 22.2-5.9l77.5-139.7c3-5.4-.9-12.1-7.1-12.1-1.6 0-3.2.5-4.6 1.4l-142 97.4c-9.6 6.6-9.2 20.9.8 26.9zM16 171.7v123.5c0 8 10.4 11 14.7 4.4l60-92c5-7.6 2.6-17.8-5.2-22.5L40.2 158c-10.6-6.4-24.2 1.3-24.2 13.7zM310.4 12.1 388 151.7c4.4 7.9 14.5 10.6 22.2 5.9l53.2-31.9c10-6 10.4-20.3.8-26.9L322.1 1.4c-1.4-.9-3-1.4-4.6-1.4-6.2 0-10.1 6.7-7.1 12.1zM496 171.7c0-12.4-13.6-20.1-24.2-13.7l-45.3 27.2c-7.8 4.7-10.1 14.9-5.2 22.5l60 92c4.3 6.7 14.7 3.6 14.7-4.4V171.8zm-49.3 246-160.6 18.9c-8.1.9-14.1 7.8-14.1 15.9v52.8c0 3.7 3 6.8 6.8 6.8.8 0 1.6-.1 2.4-.4l172.7-64c6.1-2.2 10.1-8 10.1-14.5 0-9.3-8.1-16.5-17.3-15.4zM233.2 512c3.7 0 6.8-3 6.8-6.8v-52.6c0-8.1-6.1-14.9-14.1-15.9l-160.6-19c-9.2-1.1-17.3 6.1-17.3 15.4 0 6.5 4 12.3 10.1 14.5l172.7 64c.8.3 1.6.4 2.4.4zM41.7 382.9l170.9 20.2c7.8.9 13.4-7.5 9.5-14.3l-85.7-150c-5.9-10.4-20.7-10.8-27.3-.8L30.2 358.2c-6.5 9.9-.3 23.3 11.5 24.7zm439.6-24.8-78.4-120c-6.5-10-21.4-9.6-27.3.8l-85.4 149.6c-3.9 6.8 1.6 15.2 9.5 14.3l170.1-20c11.8-1.4 18-14.7 11.5-24.6zm-216.9 11 78.4-137.2c6.1-10.7-1.6-23.9-13.9-23.9H183.2c-12.3 0-20 13.3-13.9 23.9l78.4 137.2c3.7 6.4 13 6.4 16.7 0zm-90-193.1h163.2c12.2 0 19.9-13.1 14-23.8l-80-144c-2.8-5.1-8.2-8.2-14-8.2h-3.2c-5.8 0-11.2 3.2-14 8.2l-80 144c-5.9 10.7 1.8 23.8 14 23.8z"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Steam Player Avatar
+              Object Layout In Memory
             
           </span>
         </div>
@@ -207,7 +207,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -222,21 +222,17 @@
         
   
   
-    
-  
   
     
     
       
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../Config%20and%20Settings/Developer%20Settings/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../Unreal%20Engine/Config%20and%20Settings/Developer%20Settings/" class="md-tabs__link">
           
   
   Unreal Engine
@@ -253,11 +249,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../C%2B%2B/ObjectLayoutInMemory/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   C++
@@ -290,7 +288,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="GameDevCodex" class="md-nav__button md-logo" aria-label="GameDevCodex" data-md-component="logo">
+    <a href="../.." title="GameDevCodex" class="md-nav__button md-logo" aria-label="GameDevCodex" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m48.7 125.8 53.2 31.9c7.8 4.7 17.8 2 22.2-5.9l77.5-139.7c3-5.4-.9-12.1-7.1-12.1-1.6 0-3.2.5-4.6 1.4l-142 97.4c-9.6 6.6-9.2 20.9.8 26.9zM16 171.7v123.5c0 8 10.4 11 14.7 4.4l60-92c5-7.6 2.6-17.8-5.2-22.5L40.2 158c-10.6-6.4-24.2 1.3-24.2 13.7zM310.4 12.1 388 151.7c4.4 7.9 14.5 10.6 22.2 5.9l53.2-31.9c10-6 10.4-20.3.8-26.9L322.1 1.4c-1.4-.9-3-1.4-4.6-1.4-6.2 0-10.1 6.7-7.1 12.1zM496 171.7c0-12.4-13.6-20.1-24.2-13.7l-45.3 27.2c-7.8 4.7-10.1 14.9-5.2 22.5l60 92c4.3 6.7 14.7 3.6 14.7-4.4V171.8zm-49.3 246-160.6 18.9c-8.1.9-14.1 7.8-14.1 15.9v52.8c0 3.7 3 6.8 6.8 6.8.8 0 1.6-.1 2.4-.4l172.7-64c6.1-2.2 10.1-8 10.1-14.5 0-9.3-8.1-16.5-17.3-15.4zM233.2 512c3.7 0 6.8-3 6.8-6.8v-52.6c0-8.1-6.1-14.9-14.1-15.9l-160.6-19c-9.2-1.1-17.3 6.1-17.3 15.4 0 6.5 4 12.3 10.1 14.5l172.7 64c.8.3 1.6.4 2.4.4zM41.7 382.9l170.9 20.2c7.8.9 13.4-7.5 9.5-14.3l-85.7-150c-5.9-10.4-20.7-10.8-27.3-.8L30.2 358.2c-6.5 9.9-.3 23.3 11.5 24.7zm439.6-24.8-78.4-120c-6.5-10-21.4-9.6-27.3.8l-85.4 149.6c-3.9 6.8 1.6 15.2 9.5 14.3l170.1-20c11.8-1.4 18-14.7 11.5-24.6zm-216.9 11 78.4-137.2c6.1-10.7-1.6-23.9-13.9-23.9H183.2c-12.3 0-20 13.3-13.9 23.9l78.4 137.2c3.7 6.4 13 6.4 16.7 0zm-90-193.1h163.2c12.2 0 19.9-13.1 14-23.8l-80-144c-2.8-5.1-8.2-8.2-14-8.2h-3.2c-5.8 0-11.2 3.2-14 8.2l-80 144c-5.9 10.7 1.8 23.8 14 23.8z"/></svg>
@@ -308,7 +306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -325,28 +323,25 @@
       
   
   
-    
   
   
-  
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -357,7 +352,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Unreal Engine
@@ -411,7 +406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Config%20and%20Settings/Developer%20Settings/" class="md-nav__link">
+      <a href="../../Unreal%20Engine/Config%20and%20Settings/Developer%20Settings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -480,7 +475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data%20Structures/TArray%20Tips/" class="md-nav__link">
+      <a href="../../Unreal%20Engine/Data%20Structures/TArray%20Tips/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -549,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../General%20Programming/Delegates/" class="md-nav__link">
+      <a href="../../Unreal%20Engine/General%20Programming/Delegates/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -575,8 +570,6 @@
                 
   
   
-    
-  
   
   
     
@@ -586,11 +579,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
         
           
           <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
@@ -604,7 +599,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             Steam SDK
@@ -618,7 +613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Intro/" class="md-nav__link">
+      <a href="../../Unreal%20Engine/Steam%20SDK/Intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -639,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Setup/" class="md-nav__link">
+      <a href="../../Unreal%20Engine/Steam%20SDK/Setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -652,6 +647,85 @@
   
 
               
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Unreal%20Engine/Steam%20SDK/Player%20Avatar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Steam Player Avatar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    C++
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            C++
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -673,7 +747,7 @@
           
   
   <span class="md-ellipsis">
-    Steam Player Avatar
+    Object Layout In Memory
   </span>
   
 
@@ -684,7 +758,7 @@
         
   
   <span class="md-ellipsis">
-    Steam Player Avatar
+    Object Layout In Memory
   </span>
   
 
@@ -706,9 +780,69 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#getting-player-avatar" class="md-nav__link">
+  <a href="#objective-of-this-section" class="md-nav__link">
     <span class="md-ellipsis">
-      Getting Player Avatar
+      Objective of this Section
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-objects-are-stored" class="md-nav__link">
+    <span class="md-ellipsis">
+      How objects are stored?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Alignment?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is Alignment?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#order-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Order Matters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-aligned-read-is-faster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Aligned read is faster?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proper-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proper Alignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References :
     </span>
   </a>
   
@@ -723,61 +857,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    C++
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            C++
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -785,28 +864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/ObjectLayoutInMemory/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Object Layout In Memory
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../C%2B%2B/StaticKeyword/" class="md-nav__link">
+      <a href="../StaticKeyword/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -854,9 +912,69 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#getting-player-avatar" class="md-nav__link">
+  <a href="#objective-of-this-section" class="md-nav__link">
     <span class="md-ellipsis">
-      Getting Player Avatar
+      Objective of this Section
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-objects-are-stored" class="md-nav__link">
+    <span class="md-ellipsis">
+      How objects are stored?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Alignment?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is Alignment?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#order-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Order Matters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-aligned-read-is-faster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Aligned read is faster?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proper-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proper Alignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References :
     </span>
   </a>
   
@@ -877,15 +995,113 @@
                   
 
 
-<h1 id="steam-player-avatar">Steam Player Avatar<a class="headerlink" href="#steam-player-avatar" title="Permanent link">#</a></h1>
-<p>Steam has the profile picture you set in three different sizes</p>
+<h1 id="object-layout-in-memory">Object Layout In Memory<a class="headerlink" href="#object-layout-in-memory" title="Permanent link">#</a></h1>
+<h2 id="objective-of-this-section">Objective of this Section<a class="headerlink" href="#objective-of-this-section" title="Permanent link">#</a></h2>
+<p>Ever wondered, how objects are stored in the memory? it's a pretty cool concept, and can come
+useful in cases when you want to optimize memory. After knowing this you will equip yourself with
+knowledge to effectively create classes and structs in a more memory efficient way.</p>
+<h2 id="how-objects-are-stored">How objects are stored?<a class="headerlink" href="#how-objects-are-stored" title="Permanent link">#</a></h2>
+<p>Let's start by taking the following example,</p>
+<div class="language-C++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">InefficientStruct</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="cm">/* Size in Memory = 20 bytes (4 bytes * 5) */</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">uint32</span><span class="w"> </span><span class="n">Var1</span><span class="p">;</span><span class="w">    </span><span class="c1">// 32 bits</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">bIsValid</span><span class="p">;</span><span class="w">  </span><span class="c1">// 8 bits </span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="n">int32</span><span class="w"> </span><span class="n">Var2</span><span class="p">;</span><span class="w">     </span><span class="c1">// 32 bits</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">Point</span><span class="p">;</span><span class="w">    </span><span class="c1">// 32 bits</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="n">uint8</span><span class="w"> </span><span class="n">Flags</span><span class="p">;</span><span class="w">    </span><span class="c1">// 8 bits</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>This is how we normally create structs, without taking order of the variables into account, but
+that is inefficient because of something called <code>alignment</code>.</p>
+<h2 id="what-is-alignment">What is Alignment?<a class="headerlink" href="#what-is-alignment" title="Permanent link">#</a></h2>
+<h3 id="order-matters">Order Matters<a class="headerlink" href="#order-matters" title="Permanent link">#</a></h3>
+<p>In the above example we can see that, the variables are in different sizes and not sorted
+in the order of decreasing sizes, it might not seem like that matters, but it does.  </p>
+<p>We assume that the compiler simply packs all these variables as tightly as possible, 
+but that's not the case. See <code>Fig1</code>, there are <code>holes</code> in between different variables,
+holes in the sense unused memory. This is because every data type has something called the
+<code>natural alignment</code>, which lets the processor read the data faster. </p>
+<figure>
+  <img alt="Test" src="../images/ObjectInMemoryImg1.jpg" width="300" />
+  <figcaption>[Fig1] Non-Aligned in Memory</figcaption>
+</figure>
+<h3 id="why-aligned-read-is-faster">Why Aligned read is faster?<a class="headerlink" href="#why-aligned-read-is-faster" title="Permanent link">#</a></h3>
+<p><code>Alignment</code> refers to, if the address of the data in the memory are in multiples
+of the size of the data.</p>
+<p>For example, consider this struct
+<div class="language-C++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Aligned8</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">{</span><span class="w">  </span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="n">uint8</span><span class="w"> </span><span class="n">Flags</span><span class="p">;</span><span class="w">   </span><span class="c1">// 8 bits</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">bIsValid</span><span class="p">;</span><span class="w"> </span><span class="c1">// 8 bits</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">Key</span><span class="p">;</span><span class="w">      </span><span class="c1">// 8 bits</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">int8</span><span class="w"> </span><span class="n">Mode</span><span class="p">;</span><span class="w">     </span><span class="c1">// 8 bits</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
+</span></code></pre></div>
+In the above example we can see all the data are of size 8 bit, this means that each data
+takes 1 byte in the memory, so if the processor wants to read the second variable <code>bIsValid</code>,
+it can easily add 1 byte to the memory address of the first data <code>Flags</code>to get the value of the
+variable <code>bIsValid</code>. If the processor wants to get the address of the 4th variable <code>Mode</code>,
+we can use the multiple of the size of the data type to get the address,
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>// Multiplied by 2, because it&#39;s the 4th variable, for 3rd it would be 2
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Address of &#39;Mode&#39; = Address of &#39;Flags&#39; + 3 * (1 byte)
+</span></code></pre></div>
+So if we consider the case of variables with 16 bits, then that would be 2 bytes, then the
+processor can easily multiply 2 bytes instead of 1 byte to get the address. The data can be
+aligned by 1 byte(8 bits), 2 bytes(16 bits), 4 bytes(32 bits), 8 bytes(64 bits) etc. So</p>
 <ul>
-<li>Small (32 x 32 px) </li>
-<li>Medium (64 x 64 px)</li>
-<li>Large (128 x 128 px)</li>
+<li>1 byte aligned would be in consecutive memory or any memory (0x0, 0x1, 0x2)</li>
+<li>2 bytes aligned would be in only in memory addresses of multiple of 2 (0x0, 0x2, 0x4)</li>
+<li>4 bytes aligned would be in only in memory addresses of multiple of 4 (0x0, 0x4, 0x8, 0xC)</li>
+<li>8 bytes aligned would be in only in memory addresses of multiple of 8 (0x0, 0x8, 0xF)</li>
 </ul>
-<p>You can retrieve and use them in your game, note that the Small and Medium avatar are readily available to use, but the for the Large avatar you need to request and get it asynchronously.</p>
-<h3 id="getting-player-avatar">Getting Player Avatar<a class="headerlink" href="#getting-player-avatar" title="Permanent link">#</a></h3>
+<p>Most processors can only read and write properly aligned blocks of data, because if the
+data is packed without leaving holes then, the data would be spread across two memory
+addresses and the processor will read from two memory address then <code>mask</code> them, <code>shift</code> them, and then do <code>OR</code> to
+get the values, so additional operations need to be done to read one data.</p>
+<p>Instead, if it's aligned then just one read operation, and we can get the data. Some 
+processors don't even go this far, they just give out garbage values or crash the program.</p>
+<h2 id="proper-alignment">Proper Alignment<a class="headerlink" href="#proper-alignment" title="Permanent link">#</a></h2>
+<p>Let's see how proper alignment looks like, consider the following struct. 
+<div class="language-C++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">EfficientAlignedStruct</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="cm">/* Size in Memory = 16 bytes (4 bytes * 4) */</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="n">uint32</span><span class="w"> </span><span class="n">Var1</span><span class="p">;</span><span class="w">      </span><span class="c1">// 32 bits (4 byte aligned)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="n">int32</span><span class="w"> </span><span class="n">Var2</span><span class="p">;</span><span class="w">       </span><span class="c1">// 32 bits (4 byte aligned)</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">Point</span><span class="p">;</span><span class="w">      </span><span class="c1">// 32 bits (4 byte aligned)</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="n">uint8</span><span class="w"> </span><span class="n">Flags</span><span class="p">;</span><span class="w">      </span><span class="c1">// 8 bits (1 byte aligned)</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">bIsValid</span><span class="p">;</span><span class="w">    </span><span class="c1">// 8 bits (1 byte aligned)</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">}</span>
+</span></code></pre></div>
+The above example is aligned by 4 bytes(32 bits) and followed by the 1 byte alignment 
+for the <code>Flags</code> and <code>IsValid</code> variable. So for the <code>EfficientAlignedStruct</code>, the memory
+would look like <code>Fig2</code></p>
+<figure>
+  <img alt="Test" src="../images/ObjectInMemoryImg2.jpg" width="300" />
+  <figcaption>[Fig2] Aligned in Memory</figcaption>
+</figure>
+<p>You might think that the size of the struct object in memory would be 14 bytes, no it's
+not, it's 16 bytes. Since the entire struct follows 4 bytes alignment, 2 bytes that is 
+left in the last memory address(refer <code>Fig2</code>) is padded by the compiler leaving it empty.</p>
+<p>Imagine a scenario of having an array of these <code>EfficientAlignedStruct</code> struct. If the struct
+is 4 byte aligned like in here, then array access is also very easy. </p>
+<p>You can explicitly specify the wasted space like follows, adding this does not have any effect
+in terms of memory, the object would still occupy the same space.</p>
+<div class="language-C++ highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">EfficientAlignedStruct</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">{</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="cm">/* Size in Memory = 16 bytes (4 bytes * 4) */</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="n">uint32</span><span class="w"> </span><span class="n">Var1</span><span class="p">;</span><span class="w">      </span><span class="c1">// 32 bits (4 byte aligned)</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="n">int32</span><span class="w"> </span><span class="n">Var2</span><span class="p">;</span><span class="w">       </span><span class="c1">// 32 bits (4 byte aligned)</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">Point</span><span class="p">;</span><span class="w">      </span><span class="c1">// 32 bits (4 byte aligned)</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="n">uint8</span><span class="w"> </span><span class="n">Flags</span><span class="p">;</span><span class="w">      </span><span class="c1">// 8 bits (1 byte aligned)</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">bIsValid</span><span class="p">;</span><span class="w">    </span><span class="c1">// 8 bits (1 byte aligned)</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="n">int8</span><span class="w"> </span><span class="n">_padding</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w">  </span><span class="c1">// explicit padding </span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="references">References :<a class="headerlink" href="#references" title="Permanent link">#</a></h2>
+<ol>
+<li><code>Game Engine Architecture</code> book, by Jason Gregory.</li>
+</ol>
 
 
 
@@ -972,10 +1188,10 @@
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.path", "navigation.top", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.code.select", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.path", "navigation.top", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.code.select", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
     
   </body>
